@@ -36,6 +36,7 @@ export function updateTask(task) {
                 var index = getIndex(tasks, task.id);
                 if (index !== -1) {
                     tasks[index]['completed'] = !task.completed;
+                    //tasks[index]['task'] = task.task;
                 }
                 AsyncStorage.setItem('data', JSON.stringify(tasks), () => {
                     dispatch({type: UPDATE_TASK, task:task});
